@@ -1,0 +1,379 @@
+body
+{
+    background-color: #f8fafd;
+    font-family: Roboto, Arial, sans-serif;
+    line-height: 1.25rem;
+    font-size: .875rem;
+    letter-spacing: .0142857143em;
+    color: #1f1f1f;
+    overflow: hidden;
+}
+
+/* Début Bloc Header */
+header
+{
+    height: 13vh;
+    display: grid;
+    grid-template-areas: "header_1 header_2";
+}
+#header_1
+{
+    grid-area:header_1 ;
+    width: 21vw;
+    display: grid;
+    grid-template-areas: "header_1__1 header_1__2 header_1__3";
+
+}
+#header_1__1
+{
+    width: 65px;
+}
+#header_1__2
+{
+    width: 65px;
+}
+#header_1__3
+{
+    width: 120px;
+    font-size: 20px;
+}
+#header_2
+{
+     grid-area:header_2 ;
+     width: 79vw;
+
+}
+/* Fin Bloc Header */
+
+/* Début Bloc Main */
+main
+{
+    height: 87vh;
+    display: grid;
+    grid-template-areas: "main_1 main_2";
+
+}
+#main_1
+{
+    width: 21vw;
+    padding-left: 20px;
+}
+#main_2
+{
+    width: 79vw;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+#bloc_main
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: white;
+    display: grid;
+    grid-template-areas: "entete"
+                         "zero_contact";
+
+}
+.ajout3{
+    overflow-y: auto; /* activer le défilement */
+    scrollbar-width: 2px; /* définir la largeur du scrollbar */
+}
+
+/* Personnalisation de la barre de défilement pour les navigateurs basés sur WebKit (Chrome, Safari) */
+.ajout3::-webkit-scrollbar {
+    width: 2px; /* définir la largeur du scrollbar */
+}
+
+/* Personnalisation de la poignée du scrollbar pour les navigateurs basés sur WebKit */
+.ajout3::-webkit-scrollbar-thumb {
+    background-color: #1100A5; /* couleur de fond de la poignée */
+}
+.ajouter_contacts
+{
+   
+    
+    width: 100%;
+    overflow-y: auto; 
+    scrollbar-width: 2px;
+    border-radius: 20px;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    grid-template-areas: "ajout1"
+                         "ajout2"
+                         "ajout3";
+
+}
+.ajout1
+{
+    grid-area: ajout1;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.ajout2
+{
+    grid-area: ajout2;
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+.ajout3
+{
+    padding-top: 10px;
+    padding-left: 20px;
+    grid-area: ajout3;
+    height: 50vh;
+    
+}
+.ajout3T
+{
+    display: grid;
+    grid-template-columns: 1fr 49fr;
+    grid-template-areas: "ajout3_1 ajout3_2";
+}
+.ajout3TEmail
+{
+    display: grid;
+    grid-template-columns: 1fr 48fr 20fr;
+    grid-template-areas: "ajout3_1 ajout3_2 ajout3_2";
+}
+.ajout3_1
+{
+    height: 40px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ajout3_3
+{
+   display: flex;
+   align-items: center;
+}
+/* Fin Bloc Main */
+
+/* Début Bloc Ajouter Contact */
+
+#ajouter_contact
+{
+    background-color: #17202A50;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    bottom: -100vh;
+    margin-top: -100vh;
+    z-index: 1;
+   
+}
+#bloc_ajouter_contact
+{
+    background-color: white;
+    width: 50vw;
+    height: 70vh;
+    border-radius: 20px;
+    border-bottom: solid #5D6D7E 3px;
+    border-top: solid #5D6D7E 3px;
+    display: grid;
+    
+}
+
+/* Fin Bloc Ajouter Contact */
+
+/* Début Bloc Nav */
+
+#Nav
+{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    z-index: 1;
+    background-color: white;
+    border-right: solid #3336F660 2px;
+    width: 70vw;height: 100vh;
+    position: relative;
+    bottom: -100vh;
+    margin-top: -100vh;
+    left: -70vw;
+    transition-property: left;
+    transition-duration: 0.3s;
+    display: grid;
+    grid-template-areas: "header"
+                         "main";
+                         
+}
+#header
+{
+    height: 10vh;
+    display: grid;
+    grid-template-areas: "header1__Nav header2__Nav";
+}
+#header2__Nav
+{
+    font-size: 20px;
+}
+#main
+{
+    height: 90vh;
+    padding-left: 20px;
+    
+}
+/* Fin Bloc Nav */
+#entete
+{
+   padding: 20px;
+}
+#zero_contact
+{
+    display: grid;
+    grid-template-areas: "les_images"
+                         "tt"
+                         "ttt";
+}
+#les_images {
+   width: 250px;
+   height: 250px;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   opacity: 0;
+   transition-property: background-image,opacity;
+   transition-duration: 0.5s;
+}
+
+
+.center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center_left
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.transition_width
+{
+    transition-property: width , font-size;
+    transition-duration: 0.3s;
+}
+#recherche
+{
+    width: 30vw;
+}
+#recherche::placeholder
+{
+    color: #ABB2B9;
+
+}
+#CreerC
+{
+    background-color: #c2e7ff;
+    font-size: 15px;
+    height: 60px;
+    border-radius: 17px;
+    width: 13vw;
+}
+#CreerC__main
+{
+    background-color: #c2e7ff;
+    font-size: 15px;
+    height: 60px;
+    border-radius: 17px;
+    width: 47vw;
+}
+#Cont
+{
+    background-color: #c2e7ff;
+    height: 45px;
+    border-radius: 30px;
+    font-size: 15px;
+    width: 15vw;
+    color: #001d35;
+    font-weight: 700;
+}
+#Cont__main
+{
+    background-color: #c2e7ff;
+    height: 45px;
+    border-radius: 30px;
+    font-size: 15px;
+    width: 60vw;
+    color: #001d35;
+    font-weight: 700;
+}
+#libelle
+{
+    color: #444746;
+
+    font-size: 17px;
+    font-weight: 700;
+    width: 15vw;
+    text-indent: 10px;
+}
+#libelle__main
+{
+    color: #444746;
+
+    font-size: 17px;
+    font-weight: 700;
+    width: 60vw;
+    text-indent: 10px;
+}
+
+@media (max-width:1280px) {
+      #main_1
+      {
+        width: 0;
+        visibility: hidden;
+      }
+      #main_2
+      {
+        width: 100vw;
+        padding-right: 40px;
+      }
+      #header_2
+        {
+           
+            width: 60vw;
+
+        }
+        #recherche
+        {
+            position: absolute;
+            right: 20px;
+        }
+}
+@media (max-width:640px) {
+
+    #header_2
+      {
+         
+          width: 40vw;
+
+      }
+}
+@media (max-width:600px) {
+    #recherche
+    {
+        width: 50vw;
+    }
+   
+}
+@media (max-width:470px) {
+    #header_1__3
+    {
+        visibility: hidden;
+    }
+    #header_1__2
+    {
+        visibility: hidden;
+    }
+   
+}
+@media (max-width:385px) {
+    #CreerC__main
+    {
+        width: 60vw;
+    }
+   
+}

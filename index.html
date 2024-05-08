@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="icon_googleContact.png" /> 
+    <!-- class Boostrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- class Boostrap CSS -->  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/intlTelInput.css">
+    <link rel="stylesheet" href="css/intlTelInput.min.css">
+    <title>Google Contacts</title>
+</head>
+<body >
+<!-- Debut Ajouter Contact-->  
+
+<div id="ajouter_contact" class="center" hidden>
+    <div id="bloc_ajouter_contact">
+         <div>
+            <i class="fa-solid fa-circle-xmark" style="font-size: 30px;"></i>
+         </div>
+         <div>
+           <!-- 
+                <img class="LrbNhc tUOMob" src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png" alt="Photo d'un contact." data-iml="10556.199999999953"> 
+                <i class="fa-solid fa-circle-plus" style="border: solid red 3px;padding: 10px;border-radius: 100px;"></i>
+           --> 
+         </div>
+         <div>
+
+         </div>
+    </div>
+
+</div>
+
+<!-- Fin Ajouter Contact -->  
+
+
+<div id="Nav">
+    <div id="header">
+        <div id="header1__Nav" class="center">
+            <img src="icons_entete/icon_googleContact.png" alt="icon_gogleContact" width="30px" height="40px">
+         </div>
+         <div id="header2__Nav" class="center_left">
+            Contacts
+         </div>
+    </div>
+    <div id="main">
+        <div id="CreerC__main" class="center transition_width" style="position: relative;"><i class="fa-solid fa-plus element-left transition_width" style="font-size: 20px;" id="icon1_Nav"></i><span style="opacity: 0;">O</span>Créer un contact</div><br>
+        <div id="Cont__main" class="center transition_width" style="position: relative;"><span style="opacity: 0;"></span><i class="fa-solid fa-user element-left transition_width" style="font-size: 20px;" id="icon2_Nav"></i></i><span style="opacity: 0;">O</span>Contact</div><br><br>
+        <div id="libelle__main" style="position: relative;" class="transition_width">Libellés <i class="element-right fa-solid fa-plus transition_width" style="font-size: 20px;" id="icon3_Nav"></i></i></div>
+    </div>
+    
+</div> 
+<header >
+      <div id="header_1">
+         <div id="header_1__1" class="center" onclick="nav()">
+            <img src="icons_entete/hamburger-menu.svg" alt="burger" width="30" height="35">
+         </div>
+         <div id="header_1__2" class="center">
+            <img src="icons_entete/icon_googleContact.png" alt="icon_gogleContact" width="30px" height="40px">
+         </div>
+         <div id="header_1__3" class="center_left">
+            Contacts
+         </div>
+      </div>
+      <div id="header_2" class="center_left">
+        <input type="text" class="form-control"  placeholder="Recherche" id="recherche">
+      </div>  
+</header>
+<main>
+    <style>
+        .element-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .element-left {
+            position: absolute; 
+            left: 15px;
+        }
+    </style>
+    <section id="main_1" class="transition_width">
+        <div id="CreerC" class="center transition_width" style="position: relative;"><i class="fa-solid fa-plus element-left transition_width" style="font-size: 20px;" id="icon1"></i><span style="opacity: 0;">O</span>Créer un contact</div><br>
+        <div id="Cont" class="center transition_width" style="position: relative;"><span style="opacity: 0;"></span><i class="fa-solid fa-user element-left transition_width" style="font-size: 20px;" id="icon2"></i></i><span style="opacity: 0;">O</span>Contact</div><br><br>
+        <div id="libelle" style="position: relative;" class="transition_width">Libellés <i class="element-right fa-solid fa-plus transition_width" style="font-size: 20px;" id="icon3"></i></i></div>
+    </section>
+    <section id="main_2" class="transition_width">
+        
+            <div id="bloc_main" onclick="deNav()" hidden>
+                <!-- <div id="entete">
+                    <h3>Contacts <span style="font-size: 18px;" id="nombre_contacts">(0)</span></h3>
+                </div>
+                <div id="zero_contact" class="center">
+                    <div id="les_images"></div>
+                    <div class="text-center fs-5" id="tt">Aucun contact pour l'instant</div>
+                    <div class="center btn btn-info" id="ttt">Créer un contact</div>
+                </div> -->
+            </div>
+            <div class="ajouter_contacts" onclick="deNav()">
+                <div class="ajout1">
+                    <i class="fa-solid fa-arrow-left" ></i>
+                </div>
+                <div class="ajout2">
+                    <img class="LrbNhc tUOMob" src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png" alt="Photo d'un contact." data-iml="10556.199999999953" width="150px" height="150px"> 
+                    <i class="fa-solid fa-plus" style="border: solid white 3px;padding: 10px;border-radius: 100px;position: relative;left: -35px;bottom: -40px;background-color: #6557E3;color: white;"></i>
+                </div>
+                <div class="ajout3">
+                    <div class="ajout3T">
+                        <div class="ajout3_1"><img src="icons_formulaire/person.PNG" alt="" width="20px" height="20px"></div>
+                        <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Prénom"></div>
+                    </div><br>   
+                    <div class="ajout3T">
+                        <div class="ajout3_1"><img src="icons_formulaire/person.PNG" alt="" width="20px" height="20px" style="opacity: 0;"></div>
+                        <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Nom"></div>
+                    </div><br>
+                    <div class="ajout3T">
+                        <div class="ajout3_1"><img src="icons_formulaire/entreprise.PNG" alt="" width="20px" height="20px"></div>
+                        <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Entreprise"></div>
+                    </div> <br>
+                    <div class="ajout3T">
+                        <div class="ajout3_1"><img src="icons_formulaire/person.PNG" alt="" width="20px" height="20px" style="opacity: 0;"></div>
+                        <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Fonction"></div>
+                    </div><br>
+                    <div class="ajout3T">
+                        <div class="ajout3_1"><img src="icons_formulaire/email.PNG" alt="" width="20px" height="20px"></div>
+                        <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Email"></div>
+                    </div> <br>
+                    <div id="ajouter_email">
+                        <!-- <div class="ajout3TEmail">
+                            <div class="ajout3_1"><img src="email.PNG" alt="" width="20px" height="20px" style="opacity: 0;"></div>
+                            <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Email"></div>
+                            <div class="ajout3_3"><i class="fa-solid fa-circle-xmark icon" style="font-size: 20px;opacity: 0;"></i></div>
+                        </div><br> -->
+                    </div>
+                    <div class="ajout3T">
+                        <div class="ajout3_1"><img src="icons_formulaire/email.PNG" alt="" width="20px" height="20px" style="opacity: 0;"></div>
+                        <div class="ajout3_2 form-control btn" style="width: 50vw;background-color: #D6EAF8;color: #0b57d0;font-weight: 400;border-radius: 100px;">Ajouter une adresse E-mail</div>
+                    </div> <br>
+                    <div class="ajout3T">
+                        <div class="ajout3_1"><img src="icons_formulaire/phone.PNG" alt="" width="20px" height="20px" style="opacity: 1;"></div>
+                        <div class="ajout3_2"><input type="tel" class="form-control" value="+243" style="width: 50vw;" id="phone" ></div>
+                    </div> <br>
+                </div> 
+                    
+            </div>
+    </section>
+</main>   
+ 
+
+
+<!-- class Boostrap JS -->
+<script src="https://kit.fontawesome.com/225033a513.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/intlTelInput.js"></script>
+<script>
+    let phone = document.querySelector("#phone");
+    window.intlTelInput(phone,{})
+</script>
+<!-- class Boostrap JS -->
+<script src="js/index.js"></script>
+</body>
+</html>
