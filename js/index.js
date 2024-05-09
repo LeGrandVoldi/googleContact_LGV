@@ -98,25 +98,58 @@ let nombre_contacts = document.getElementById('nombre_contacts');
         let Nav = document.getElementById('Nav');
         Nav.style.left = "-70vw"
     }
+/*  LA LOGIQUE  */
 
-/* Debut affichage button effacer Email */
-    let elements = document.querySelectorAll('.ajout3TEmail');
-    elements.forEach(function(element) {
-            // Ajoute un écouteur d'événements de clic à chaque élément
-            element.addEventListener('mouseover', function() {
-                let idUtilisateurs = element.querySelector('i');
-                idUtilisateurs.style.opacity = "1"
+let Table_prenoms = [];
+let Table_noms = [];
+let Table_entreprises = [];
+let Table_fonctions = [];
+let Table_emails = [];
+let Table_phones = [];
 
-            });
-            element.addEventListener('click', function() {
-                let idUtilisateurs = element.querySelector('i');
-                idUtilisateurs.style.opacity = "1"
 
-            });
-            element.addEventListener('mouseout', function() {
-                let idUtilisateurs = element.querySelector('i');
-                idUtilisateurs.style.opacity = "0"
+let btn_envois = document.getElementById('btn_envois');
+let ajouter_contacts = document.querySelector('.ajouter_contacts');
+let bloc_main = document.getElementById('bloc_main');
 
-            });
-        });
-/* Fin affichage button effacer Email */
+btn_envois.addEventListener('click',function(event){
+    
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Ajoue réussi avec succès"
+      });
+      ajouter_contacts.style.opacity = "0";
+      
+      
+      setTimeout(() => {
+          ajouter_contacts.hidden = true 
+          bloc_main.hidden = false
+          bloc_main.style.opacity = "1";
+      }, 300); 
+      
+       
+})
+
+function fermerAjoue()
+{
+    ajouter_contacts.style.opacity = "0";
+    setTimeout(() => {
+        ajouter_contacts.hidden = true 
+        bloc_main.hidden = false
+        bloc_main.style.opacity = "1";
+    }, 300); 
+}
+
+
+   
+
