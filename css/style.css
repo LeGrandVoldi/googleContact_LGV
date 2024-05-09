@@ -78,6 +78,26 @@ main
                          "zero_contact";
 
 }
+
+#bloc_contacts
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    grid-template-areas: "bloc_contacts__1"
+                         "bloc_contacts__2";
+
+}
+#bloc_contacts__1
+{
+    padding: 20px;
+}
 .ajout3{
     overflow-y: auto; /* activer le défilement */
     scrollbar-width: 2px; /* définir la largeur du scrollbar */
@@ -243,7 +263,6 @@ main
    transition-duration: 0.5s;
 }
 
-
 .center
 {
     display: flex;
@@ -324,6 +343,46 @@ main
     width: 60vw;
     text-indent: 10px;
 }
+table
+{
+    margin: 20px;
+}
+thead
+{
+    
+    height: 50px;
+    
+    
+}
+.border-top-left-radius
+{
+    background-color: #D6EAF8;
+    border-top-left-radius: 15px;
+    border-right: solid white 2px;
+}
+.border-top-right-radius
+{
+    background-color: #D6EAF8;
+    border-top-right-radius: 15px;
+    border-left: solid white 2px;
+}
+.border-right
+{
+    border-right: solid white 2px;
+}
+.trP
+{
+    background-color: #D6EAF8;
+    text-indent: 10px;
+}
+
+.tr:hover
+{
+    background-color: #D6EAF850;
+}
+
+
+
 
 @media (max-width:1280px) {
       #main_1

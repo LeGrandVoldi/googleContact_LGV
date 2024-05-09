@@ -90,7 +90,7 @@
     </section>
     <section id="main_2" class="transition_width">
         
-            <div id="bloc_main" onclick="deNav()">
+          <div id="bloc_main" onclick="deNav()" hidden>
                <div id="entete">
                     <h3>Contacts <span style="font-size: 18px;" id="nombre_contacts">(0)</span></h3>
                 </div>
@@ -99,36 +99,79 @@
                     <div class="text-center fs-5" id="tt">Aucun contact pour l'instant</div>
                     <div class="center btn btn-info" id="ttt">Créer un contact</div>
                 </div> 
-                <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">Titre</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Numéro de téléphone</th>
-                        <th scope="col">Fonction & Entreprise</th>
-                        <th scope="col">Libellés</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><img src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png" alt="Photo d'un contact." data-iml="10556.199999999953" width="80px" height="80px"> </th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                
+            </div>
+            <div id="bloc_contacts" onclick="deNav()">
+                <div id="bloc_contacts__1">
+                    <h3>Contacts <span style="font-size: 18px;" id="nombre_contacts">(0)</span></h3>
+                </div>
+                <div id="bloc_contacts__2">
+                    <table style="width: 95%;">
+                        <thead>
+                          <tr >
+                            <th class="trP border-top-left-radius" scope="col">Titre</th>
+                            <th class="trP border-right" scope="col">E-mail</th>
+                            <th class="trP border-right" scope="col">Numéro de téléphone</th>
+                            <th class="trP border-right" scope="col">Fonction & Entreprise</th>
+                            <th class="trP border-right" scope="col">Libellés</th>
+                            <th class="trP border-top-right-radius" scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="tr">
+                            <th scope="row" class="center_left" style="padding-top: 10px;"><img src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png" alt="Photo d'un contact." data-iml="10556.199999999953" width="80px" height="80px"><span style="opacity: 0;">OO</span>vovo</th>
+                            <td >Markddghfgdhgfd</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                            <td class="lolo" style="text-align: right;opacity: 0;"><i class="fa-solid fa-pen i1" style="padding: 10px;border-radius: 100px;opacity: 1;" title="Modifier Contact"></i><i class="fa-solid fa-ellipsis-vertical i2" style="padding-top: 10px;padding-bottom: 10px;padding-left: 15px;padding-right: 15px;border-radius: 100px;opacity: 1;" title="Autres actions"></i></td>
+                          </tr>
+                        
+                        </tbody>
+                      </table>
+                </div>
+                <script>
+                    let lignes = document.querySelectorAll('.tr')
+                    let i1s = document.querySelectorAll('.i1')
+                    let i2s = document.querySelectorAll('.i2')
+                    lignes.forEach(function(ligne){
+                        ligne.addEventListener('mouseover',function(){
+                            let icon = ligne.querySelector('.lolo');
+                            icon.style.opacity ="1"
+
+                        })
+                        ligne.addEventListener('mouseout',function(){
+                            let icon = ligne.querySelector('.lolo');
+                            icon.style.opacity ="0"
+                        })
+                    })
+
+                    i1s.forEach(function(i1){
+                        i1.addEventListener('mouseover',function(){
+                            i1.style.backgroundColor="#34495E"
+                            i1.style.color="white"
+
+                        })
+                        i1.addEventListener('mouseout',function(){
+                            i1.style.backgroundColor="#34495E00"
+                            i1.style.color="black"
+                        })
+                    })
+
+                    i2s.forEach(function(i2){
+                        i2.addEventListener('mouseover',function(){
+                            i2.style.backgroundColor="#34495E"
+                            i2.style.color="white"
+
+                        })
+                        i2.addEventListener('mouseout',function(){
+                            i2.style.backgroundColor="#34495E00"
+                            i2.style.color="black"
+                        })
+                    })
+
+                </script>
+                    
             </div>
             <div class="ajouter_contacts" onclick="deNav()" hidden>
                 <div class="ajout1">
