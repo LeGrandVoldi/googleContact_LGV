@@ -68,7 +68,7 @@
          </div>
       </div>
       <div id="header_2" class="center_left">
-        <input type="text" class="form-control"  placeholder="Recherche" id="recherche">
+        <input type="text" class="form-control"  placeholder="Recherche" id="recherche" onkeyup="recherche()">
       </div>  
 </header>
 <main>
@@ -84,26 +84,32 @@
         }
     </style>
     <section id="main_1" class="transition_width">
-        <div id="CreerC" class="center transition_width" style="position: relative;"><i class="fa-solid fa-plus element-left transition_width" style="font-size: 20px;" id="icon1"></i><span style="opacity: 0;">O</span>Créer un contact</div><br>
+        <div id="CreerC" onclick="ouvrirAjoue()" class="center transition_width" style="position: relative;"><i class="fa-solid fa-plus element-left transition_width" style="font-size: 20px;" id="icon1"></i><span style="opacity: 0;">O</span>Créer un contact</div><br>
         <div id="Cont" class="center transition_width" style="position: relative;"><span style="opacity: 0;"></span><i class="fa-solid fa-user element-left transition_width" style="font-size: 20px;" id="icon2"></i></i><span style="opacity: 0;">O</span>Contact</div><br><br>
-        <div id="libelle" style="position: relative;" class="transition_width">Libellés <i class="element-right fa-solid fa-plus transition_width" style="font-size: 20px;" id="icon3"></i></i></div>
+        <div id="libelle" style="position: relative;" class="transition_width">Libellés <i  class="element-right fa-solid fa-plus transition_width btn" style="font-size: 20px;" id="icon3" onclick="ajouterLibelle()"></i></div><br><br>
+        <div id="tout_les_libelles">
+            
+        </div>
+        
+        
     </section>
     <section id="main_2" class="transition_width">
         
-          <div id="bloc_main" onclick="deNav()" hidden>
+          <div id="bloc_main" onclick="deNav()" >
                <div id="entete">
                     <h3>Contacts <span style="font-size: 18px;" id="nombre_contacts">(0)</span></h3>
                 </div>
                 <div id="zero_contact" class="center">
                     <div id="les_images"></div>
                     <div class="text-center fs-5" id="tt">Aucun contact pour l'instant</div>
-                    <div class="center btn btn-info" id="ttt">Créer un contact</div>
+                    <div class="center btn btn-info" onclick="ouvrirAjoue()" id="ttt">Créer un contact</div>
                 </div> 
                 
             </div>
-            <div id="bloc_contacts" onclick="deNav()">
+            <div id="bloc_contacts" onclick="deNav()" hidden>
                 <div id="bloc_contacts__1">
-                    <h3>Contacts <span style="font-size: 18px;" id="nombre_contacts">(0)</span></h3>
+                    <h3>Contacts <span style="font-size: 18px;" id="nombre_contacts_1">(0)</span></h3><br>
+                    <div id="contact_selectionner" >Contacts sélectionnés : <span class="btn btn-info" id="nombre_selectionner">0</span> <button id="suppressionMultiple" class="btn btn-danger" onclick="suppressionMultipleContacts()"><i class="fa-solid fa-trash"></i></button></div>
                 </div>
                 <div id="bloc_contacts__2">
                     <table style="width: 95%;">
@@ -117,60 +123,14 @@
                             <th class="trP border-top-right-radius" scope="col"></th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr class="tr">
-                            <th scope="row" class="center_left" style="padding-top: 10px;"><img src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png" alt="Photo d'un contact." data-iml="10556.199999999953" width="80px" height="80px"><span style="opacity: 0;">OO</span>vovo</th>
-                            <td >Markddghfgdhgfd</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            <td class="lolo" style="text-align: right;opacity: 0;"><i class="fa-solid fa-pen i1" style="padding: 10px;border-radius: 100px;opacity: 1;" title="Modifier Contact"></i><i class="fa-solid fa-ellipsis-vertical i2" style="padding-top: 10px;padding-bottom: 10px;padding-left: 15px;padding-right: 15px;border-radius: 100px;opacity: 1;" title="Autres actions"></i></td>
-                          </tr>
+                        <tbody id="tbody">
+                          
                         
                         </tbody>
                       </table>
+                      
                 </div>
-                <script>
-                    let lignes = document.querySelectorAll('.tr')
-                    let i1s = document.querySelectorAll('.i1')
-                    let i2s = document.querySelectorAll('.i2')
-                    lignes.forEach(function(ligne){
-                        ligne.addEventListener('mouseover',function(){
-                            let icon = ligne.querySelector('.lolo');
-                            icon.style.opacity ="1"
 
-                        })
-                        ligne.addEventListener('mouseout',function(){
-                            let icon = ligne.querySelector('.lolo');
-                            icon.style.opacity ="0"
-                        })
-                    })
-
-                    i1s.forEach(function(i1){
-                        i1.addEventListener('mouseover',function(){
-                            i1.style.backgroundColor="#34495E"
-                            i1.style.color="white"
-
-                        })
-                        i1.addEventListener('mouseout',function(){
-                            i1.style.backgroundColor="#34495E00"
-                            i1.style.color="black"
-                        })
-                    })
-
-                    i2s.forEach(function(i2){
-                        i2.addEventListener('mouseover',function(){
-                            i2.style.backgroundColor="#34495E"
-                            i2.style.color="white"
-
-                        })
-                        i2.addEventListener('mouseout',function(){
-                            i2.style.backgroundColor="#34495E00"
-                            i2.style.color="black"
-                        })
-                    })
-
-                </script>
                     
             </div>
             <div class="ajouter_contacts" onclick="deNav()" hidden>
@@ -178,30 +138,38 @@
                     <i class="fa-solid fa-arrow-left btn" onclick="fermerAjoue()"></i>
                 </div>
                 <div class="ajout2">
-                    <img class="LrbNhc tUOMob" src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png" alt="Photo d'un contact." data-iml="10556.199999999953" width="150px" height="150px"> 
-                    <i class="fa-solid fa-plus" style="border: solid white 3px;padding: 10px;border-radius: 100px;position: relative;left: -35px;bottom: -40px;background-color: #6557E3;color: white;"></i>
+                    <div style="background-image: url(https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png);width: 150px;height: 150px;background-repeat: no-repeat;background-position: center;background-size: cover;border-radius: 500px;position: relative;" id="monImage">
+                        <i class="fa-solid fa-plus" id="iconPlus" style="border: solid white 3px;padding: 10px;border-radius: 100px;bottom: 0px;background-color: #6557E3;color: white;position: absolute;bottom: 10px;right: 0;" onclick="uploadImage()"></i>
+                        <i class="fa-solid fa-pen" id="iconModifier" style="border: solid white 3px;padding: 10px;border-radius: 100px;bottom: 0px;background-color: #6557E3;color: white;position: absolute;bottom: 10px;right: 0;" onclick="uploadImage()" hidden></i>
+                    </div>
+                    
                 </div>
                 <div class="ajout3">
-
+                    <div class="ajout3T" >
+                        <div class="ajout3_1"><b>Libellés</b></div>
+                        <div class="ajout3_2"><select  name="" id="selection_libelle" class="form-control" style="width: 20vw;" multiple>
+    
+                                              </select></div>
+                    </div><br> 
                         <div class="ajout3T" >
                             <div class="ajout3_1"><img src="icons_formulaire/person.PNG" alt="" width="20px" height="20px"></div>
-                            <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" value="" placeholder="Prénom"></div>
+                            <div class="ajout3_2"><input type="text" class="form-control" id="prenom" style="width: 50vw;" value="" placeholder="Prénom"></div>
                         </div><br>   
                         <div class="ajout3T">
                             <div class="ajout3_1"><img src="icons_formulaire/person.PNG" alt="" width="20px" height="20px" style="opacity: 0;"></div>
-                            <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Nom"></div>
+                            <div class="ajout3_2"><input type="text" class="form-control" id="nom" style="width: 50vw;" placeholder="Nom"></div>
                         </div><br>
-                        <div class="ajout3T">
+                        <div class="ajout3T"> 
                             <div class="ajout3_1"><img src="icons_formulaire/entreprise.PNG" alt="" width="20px" height="20px"></div>
-                            <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Entreprise"></div>
+                            <div class="ajout3_2"><input type="text" class="form-control" id="entreprise" style="width: 50vw;" placeholder="Entreprise"></div>
                         </div> <br>
                         <div class="ajout3T">
                             <div class="ajout3_1"><img src="icons_formulaire/person.PNG" alt="" width="20px" height="20px" style="opacity: 0;"></div>
-                            <div class="ajout3_2"><input type="text" class="form-control" style="width: 50vw;" placeholder="Fonction"></div>
+                            <div class="ajout3_2"><input type="text" class="form-control" id="fonction" style="width: 50vw;" placeholder="Fonction"></div>
                         </div><br>
                         <div class="ajout3T">
                             <div class="ajout3_1"><img src="icons_formulaire/email.PNG" alt="" width="20px" height="20px"></div>
-                            <div class="ajout3_2"><input type="email" class="form-control" style="width: 50vw;" placeholder="Email"></div>
+                            <div class="ajout3_2"><input type="email" class="form-control" id="email" style="width: 50vw;" placeholder="Email"></div>
                         </div> <br>
                         <div class="ajout3T">
                             <div class="ajout3_1"><img src="icons_formulaire/email.PNG" alt="" width="20px" height="20px" style="opacity: 0;"></div>
@@ -209,11 +177,12 @@
                         </div> <br>
                         <div class="ajout3T">
                             <div class="ajout3_1"><img src="icons_formulaire/phone.PNG" alt="" width="20px" height="20px" style="opacity: 1;"></div>
-                            <div class="ajout3_2"><input type="tel" class="form-control" value="+243" style="width: 50vw;" id="phone" ></div>
+                            <div class="ajout3_2"><input type="tel" class="form-control" id="phone" value="+243" style="width: 50vw;" id="phone" ></div>
                         </div> <br>
                         <div class="ajout3T">
                             <div class="ajout3_1"><img src="icons_formulaire/email.PNG" alt="" width="20px" height="20px" style="opacity: 0;"></div>
                             <button class="ajout3_2 btn btn-info" type="submit" style="width: 30vw;" id="btn_envois">Ajouter</button>
+                            <button class="ajout3_2 btn btn-primary" type="submit" style="width: 30vw;" id="btn_modifier" hidden>Modifier</button>
                         </div> <br>
                 </div> 
                     
@@ -224,6 +193,8 @@
 
 
 <!-- class Boostrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <script src="https://kit.fontawesome.com/225033a513.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/intlTelInput.js"></script>
