@@ -176,7 +176,7 @@ main
 
 /* Personnalisation de la barre de défilement pour les navigateurs basés sur WebKit (Chrome, Safari) */
 #bloc_contacts__2::-webkit-scrollbar {
-    width: 2px; /* définir la largeur du scrollbar */
+    height: 2px; /* définir la largeur du scrollbar */
 }
 
 /* Personnalisation de la poignée du scrollbar pour les navigateurs basés sur WebKit */

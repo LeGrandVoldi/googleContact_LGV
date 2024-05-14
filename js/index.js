@@ -2,6 +2,20 @@
 
 let image = document.getElementById('les_images');
 let nombre_contacts = document.getElementById('nombre_contacts');
+let Nav = document.getElementById('Nav');
+
+let CreerC__main = document.getElementById('CreerC__main');
+let Cont__main = document.getElementById('Cont__main');
+let libelle__main = document.getElementById('libelle__main');
+let tout_les_libelles__main = document.getElementById('tout_les_libelles__main');
+
+let icon1 = document.getElementById('icon1');
+let icon2 = document.getElementById('icon2');
+let icon3 = document.getElementById('icon3');
+
+let CreerC = document.getElementById('CreerC');
+let Cont = document.getElementById('Cont');
+let libelle = document.getElementById('libelle');
 
     setTimeout(() => {
         image.style.backgroundImage = 'url(https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell1.png)';
@@ -18,22 +32,11 @@ let nombre_contacts = document.getElementById('nombre_contacts');
     function nav()
     {
         let largeurEcran = window.innerWidth
-        let Nav = document.getElementById('Nav');
+        
 
         let main1 = document.getElementById('main_1');
         let main2 = document.getElementById('main_2');
 
-        let CreerC__main = document.getElementById('CreerC__main');
-        let Cont__main = document.getElementById('Cont__main');
-        let libelle__main = document.getElementById('libelle__main');
-
-        let icon1 = document.getElementById('icon1');
-        let icon2 = document.getElementById('icon2');
-        let icon3 = document.getElementById('icon3');
-
-        let CreerC = document.getElementById('CreerC');
-        let Cont = document.getElementById('Cont');
-        let libelle = document.getElementById('libelle');
         
         if(largeurEcran > 1280)
         {
@@ -453,6 +456,7 @@ function ouvrirAjoue()
     }
     document.getElementById('btn_envois').hidden = false ;
     document.getElementById('btn_modifier').hidden = true ;   
+    Nav.style.left = "-70vw"
     
 }
 
@@ -1027,6 +1031,7 @@ function refreshLibelle(){
     }
     selection_libelle.innerHTML = tabSelection;
     tout_les_libelles.innerHTML = tab;
+    tout_les_libelles__main.innerHTML  = tab ;
 
     evenementLibelle()
 }
